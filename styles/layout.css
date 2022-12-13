@@ -1,11 +1,38 @@
+@import './constant.css';
+
 #body-container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  background-color: aquamarine;
+  background-color: var(--color-main-green);
 }
 
 #main-container {
-  background-color: tomato;
-  border: 1px solid black;
+  padding: 24px;
+  background-color: var(--color-sub-green);
+  border: 1px solid var(--color-border);
+}
+
+#main-container #main-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#main-container .main-button-list {
+  display: flex;
+  justify-content: center;
+}
+
+#main-container .main-button-list .main-button {
+  padding: 8px 16px;
+  margin-right: 16px;
+  background-color: var(--color-table-inner);
+  border-radius: 4px;
+  box-shadow: 4px 4px 10px rgba(30, 38, 35, 0.2);
+}
+
+.main-button > button {
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
 }

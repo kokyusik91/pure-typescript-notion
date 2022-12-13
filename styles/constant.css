@@ -1,0 +1,14 @@
+:root {
+  --color-success: #2f3e39;
+  --color-title: #797979;
+  --color-main-green: #00d4aa;
+  --color-orangeRed: #fe6a6a;
+  --color-border: #f0f0f0;
+  --color-sub-green: #e6fbf7;
+  --color-table-inner: #f8f8f8;
+  --color-light-text: #ababab;
+
+  --basic-padding: 16px;
+  --basic-margin: 16px;
+  --basic-margin-bottom: 32px;
+}
