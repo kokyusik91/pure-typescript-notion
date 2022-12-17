@@ -9,21 +9,26 @@
   <title>Notions</title>
 </head>
 <body id='body-container'>
+
   <main id='main-container'>
-    <header>
-    <h1 id='main-title'>고규식의 노션 📚</h1>
-    <ul class='main-button-list'>
-      <li class='main-button'><button>📷  사진</button></li>
-      <li class='main-button'><button>🎬  동영상</button></li>
-      <li class='main-button'><button>📝  메모</button></li>
-      <li class='main-button'><button>✅  할일</button></li>
-    </ul>
-  </header>
-  <section id='section-page'></section>
-  <footer>
+    <header class='banner'>
+      <h1 id='banner_title'>고규식의 노션 📚</h1>
+      <ul class='control_pannel'>
+        <li><button id='new_image' class='create-button'>📷  사진</button></li>
+        <li><button id='new_video' class='create-button'>🎬  동영상</button></li>
+        <li><button id='new_memo' class='create-button'>📝  메모</button></li>
+        <li><button id='new_todo' class='create-button'>✅  할일</button></li>
+      </ul>
+    </header>
+
+  <section class='document'></section>
+
+  <footer class='footer'>
     <p>copyright kyusik ko</p>
   </footer>
-  <script type='module' src='./dist/js/index.js' defer></script>
+
+  <script type='module' src='./dist/index.js' defer></script>
   </main>
 </body>
 </html>
+
