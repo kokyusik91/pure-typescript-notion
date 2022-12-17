@@ -8,18 +8,34 @@
 
 // 내부적으로 돔 요소를 만든다....
 export class ImageComponent {
-  private element: HTMLLIElement;
-  private imageElement: HTMLImageElement;
-  private titleElement: HTMLHeadingElement;
+  private element: HTMLElement;
+
   constructor(url: string, title: string) {
-    this.element = document.createElement('li');
-    // 이미지 태그를 만듬.
-    this.imageElement = document.createElement('img');
-    this.titleElement = document.createElement('h1');
-    this.titleElement.innerText = title;
-    this.imageElement.setAttribute('src', url);
-    this.element.appendChild(this.imageElement);
-    this.element.appendChild(this.titleElement);
+    const template = document.createElement('template');
+    console.log(template);
+    template.innerHTML = `
+      <section class='image'>
+        <div class='image_holder'>
+          <img class='image_thumbnail' >
+          <p class='image_title'></p>
+        </div>
+      </section>
+    `;
+
+    this.element = template.content.firstElementChild! as HTMLElement;
+    // 유저가 입력한 값을 바로 template literal에 넣으면 위험 할 수 있기 때문에
+    // querySelector에서 imageComponent를 찾아서 src, alt를 할당해 준다.
+    const imageComponent = this.element.querySelector(
+      '.image_thumbnail',
+    )! as HTMLImageElement;
+    console.log(imageComponent);
+    imageComponent.src = url;
+    imageComponent.alt = title;
+
+    const titleComponent = this.element.querySelector(
+      '.image_title',
+    )! as HTMLParagraphElement;
+    titleComponent.textContent = title;
   }
 
   attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin') {
