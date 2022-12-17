@@ -1,18 +1,21 @@
-import { ImageComponent } from './components/imageComponent.js';
+import { ImageComponent } from './components/page/item/imageComponent.js';
 import { PageComponent } from './components/page/page.js';
 
 class App {
   private readonly page: PageComponent;
-  private readonly imageCom: ImageComponent;
   // 초기화될때 실행되는 constructor 함수
   constructor(appRoute: HTMLElement) {
     this.page = new PageComponent();
     this.page.attachTo(appRoute, 'afterbegin');
-    this.imageCom = new ImageComponent(
-      'https://d2lmphbmp3ptuw.cloudfront.net/assets/Screen_Shot_2021_02_25_at_1_40_19_PM_63945e7ab4.png?updated_at=2022-08-24T02:08:45.843Z',
-      '컴포넌트',
+
+    const image = new ImageComponent(
+      'https://picsum.photos/600/300',
+      'Image Title',
     );
-    this.imageCom.attachTo(this.page);
+
+    console.log('image', image);
+
+    image.attachTo(appRoute, 'beforeend');
   }
 }
 
