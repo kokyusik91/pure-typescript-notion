@@ -19,7 +19,6 @@ export class ImageComponent extends BaseComponent<HTMLElement> {
     const imageTag = this.element.querySelector(
       '.image_thumbnail',
     )! as HTMLImageElement;
-    console.log('imageTag', imageTag);
     imageTag.src = url;
     imageTag.alt = title;
     // template에서
