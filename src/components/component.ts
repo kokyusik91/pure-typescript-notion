@@ -15,6 +15,11 @@ export class BaseComponent<T extends HTMLElement> implements Component {
     template.innerHTML = htmlString;
     this.element = template.content.firstElementChild! as T;
   }
+  /**
+   *
+   * @param parent HTMLElment 붙일 부모요소
+   * @param position 어느 위치에 붙일건지
+   */
   attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin') {
     parent.insertAdjacentElement(position, this.element);
   }
