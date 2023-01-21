@@ -26,6 +26,7 @@ class App {
 
     const todo = new Todo('객체지향 마무리', '구현을 얼른 마쳐야함!');
     this.page.addChild(todo);
+
     const video = new Video(
       'https://www.youtube.com/watch?v=t3M6toIflyQ',
       '프롱트',

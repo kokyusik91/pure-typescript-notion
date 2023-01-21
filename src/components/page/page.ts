@@ -15,7 +15,9 @@ export class PageItemComponent
     super(`
     <li class='item'>
       <section class='item_body'></section>
-      <button>X</button>
+      <div class='page_item_control'>
+        <button>X</button>
+      </div>
     </li>
     `);
   }
@@ -44,7 +46,7 @@ export class PageComponent
 
   addChild(sectionComponent: Component) {
     const item = new PageItemComponent();
-    item.addChild(sectionComponent);
     item.attachTo(this.element, 'beforeend');
+    item.addChild(sectionComponent);
   }
 }
